@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Form validation: Task 3</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      .active {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <label for="mail"
+        >I would like you to provide me with an e-mail address:</label
+      >
+      <input
+        novalidate
+        required
+        minlength="10"
+        type="email"
+        id="mail"
+        name="mail"
+      />
+      <button>Submit</button>
+      <p id="error"></p>
+    </form>
+  </body>
+  <script>
+    const email = document.getElementById("mail");
+    const error = document.getElementById("error");
+    email.addEventListener("input", (e) => {
+      if (email.validity.valid) {
+        error.textContent = "";
+        email.classList.remove("active");
+      } else {
+        showError();
+      }
+    });
+
+    function showError() {
+      if (email.validity.tooShort) {
+        error.textContent = "Too short";
+      } else if (email.validity.typeMismatch) {
+        error.textContent = "Not email";
+      }
+      email.classList.add("active");
+    }
+  </script>
+</html>
