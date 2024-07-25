@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="" novalidate>
+      <fieldset>
+        <legend>Email</legend>
+        <input
+          class="input"
+          type="email"
+          id="email"
+          name="email"
+          required
+          minlength="10"
+        />
+      </fieldset>
+      <p class="error"></p>
+      <fieldset>
+        <legend>Password</legend>
+
+        <input
+          class="input"
+          type="password"
+          id="password"
+          name="password"
+          required
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$"
+          minlength="8"
+        />
+      </fieldset>
+      <p class="error"></p>
+      <fieldset>
+        <legend>Confirm password</legend>
+
+        <input
+          class="input"
+          type="password"
+          id="password-confirmation"
+          name="password-confirmation"
+          required
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$"
+        />
+      </fieldset>
+      <p class="error"></p>
+      <input type="submit" value="Sign up" />
+    </form>
+    <script src="index.js"></script>
+  </body>
+</html>
