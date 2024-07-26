@@ -41,7 +41,7 @@
       </div>
 
       <div class="wrapper">
-        <fieldset>
+        <fieldset id="password-confirmation-fieldset">
           <legend>Confirm password</legend>
 
           <input
@@ -53,10 +53,10 @@
             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$"
           />
         </fieldset>
-        <p class="error"></p>
+        <p class="error error-password"></p>
       </div>
 
-      <input type="submit" value="Sign up" />
+      <input type="submit" value="Sign up" id="submit" />
     </form>
     <script src="index.js"></script>
   </body>
