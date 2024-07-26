@@ -18,4 +18,9 @@ export default [
   { languageOptions: { globals: globals.browser } },
   ...compat.extends("airbnb-base"),
   eslintConfigPrettier,
+  {
+    rules: {
+      "no-param-reassign": "off",
+    },
+  },
 ];
