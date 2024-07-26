@@ -2,12 +2,15 @@ function showError(input, error) {
   if (input.validity.valueMissing) {
     error.textContent = "This field is required";
   }
+  if (input.validity.typeMismatch) {
+    error.textContent = "It's no email";
+  }
   if (input.validity.tooShort) {
-    error.textContent = `${input.name} must be at least ${input.minLength} characters long`;
+    error.textContent = `Too short`;
   }
   if (input.validity.patternMismatch) {
     error.textContent =
-      "Password must contain minimun 1 uppercase letter, one lowercase letter and one number";
+      "Password needs 1 uppercase, 1 lowercase, and 1 number.";
   }
 }
 const fieldsets = document.querySelectorAll("fieldset");
@@ -18,7 +21,9 @@ fieldsets.forEach((fieldset, index) => {
     if (input.validity.valid) {
       error.textContent = "";
       fieldset.classList.remove("invalid");
+      error.style.visibility = "hidden";
     } else {
+      error.style.visibility = "visible";
       fieldset.classList.add("invalid");
       showError(input, error);
     }
