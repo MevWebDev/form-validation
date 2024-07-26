@@ -8,45 +8,54 @@
   </head>
   <body>
     <form action="" novalidate>
-      <fieldset>
-        <legend>Email</legend>
-        <input
-          class="input"
-          type="email"
-          id="email"
-          name="email"
-          required
-          minlength="10"
-        />
-      </fieldset>
-      <p class="error"></p>
-      <fieldset>
-        <legend>Password</legend>
+      <div class="wrapper">
+        <fieldset>
+          <legend>Email</legend>
+          <input
+            class="input"
+            type="email"
+            id="email"
+            name="email"
+            required
+            minlength="10"
+          />
+        </fieldset>
+        <p class="error"></p>
+      </div>
 
-        <input
-          class="input"
-          type="password"
-          id="password"
-          name="password"
-          required
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$"
-          minlength="8"
-        />
-      </fieldset>
-      <p class="error"></p>
-      <fieldset>
-        <legend>Confirm password</legend>
+      <div class="wrapper">
+        <fieldset>
+          <legend>Password</legend>
 
-        <input
-          class="input"
-          type="password"
-          id="password-confirmation"
-          name="password-confirmation"
-          required
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$"
-        />
-      </fieldset>
-      <p class="error"></p>
+          <input
+            class="input"
+            type="password"
+            id="password"
+            name="password"
+            required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$"
+            minlength="8"
+          />
+        </fieldset>
+        <p class="error"></p>
+      </div>
+
+      <div class="wrapper">
+        <fieldset>
+          <legend>Confirm password</legend>
+
+          <input
+            class="input"
+            type="password"
+            id="password-confirmation"
+            name="password-confirmation"
+            required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$"
+          />
+        </fieldset>
+        <p class="error"></p>
+      </div>
+
       <input type="submit" value="Sign up" />
     </form>
     <script src="index.js"></script>
