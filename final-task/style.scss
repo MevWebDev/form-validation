@@ -13,21 +13,41 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  width: max-content;
-  height: max-content;
+  gap: 1rem;
+  width: 500px;
+  height: 500px;
   padding: 5rem;
   border-radius: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+
+  .wrapper {
+    position: relative;
+  }
+  .error {
+    visibility: hidden;
+    width: 200px;
+    font-size: 14px;
+    word-wrap: break-word;
+    position: absolute;
+    top: -10%;
+    right: -100%;
+    color: white;
+    border-radius: 0.4rem;
+    padding: 0.75rem;
+    background-color: #477483;
+  }
   .invalid {
     border: 1px solid red;
     color: red;
   }
   fieldset {
+    width: 225px;
     border-radius: 0.4rem;
     border: 1px solid;
     border-color: #b0b0b0;
     color: #b0b0b0;
+    box-sizing: border-box;
 
     input {
       border: none;
