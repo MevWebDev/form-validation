@@ -1,4 +1,15 @@
-const form = document.querySelector("form");
+function showError(input, error) {
+  if (input.validity.valueMissing) {
+    error.textContent = "This field is required";
+  }
+  if (input.validity.tooShort) {
+    error.textContent = `${input.name} must be at least ${input.minLength} characters long`;
+  }
+  if (input.validity.patternMismatch) {
+    error.textContent =
+      "Password must contain minimun 1 uppercase letter, one lowercase letter and one number";
+  }
+}
 const fieldsets = document.querySelectorAll("fieldset");
 fieldsets.forEach((fieldset, index) => {
   const input = fieldset.querySelector("input");
@@ -13,16 +24,3 @@ fieldsets.forEach((fieldset, index) => {
     }
   });
 });
-
-function showError(input, error) {
-  if (input.validity.valueMissing) {
-    error.textContent = "This field is required";
-  }
-  if (input.validity.tooShort) {
-    error.textContent = `${input.name} must be at least ${input.minLength} characters long`;
-  }
-  if (input.validity.patternMismatch) {
-    error.textContent =
-      "Password must contain minimun 1 uppercase letter, one lowercase letter and one number";
-  }
-}
